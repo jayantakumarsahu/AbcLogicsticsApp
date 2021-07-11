@@ -88,6 +88,8 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/font-awesome/css/font-awesome.css" ,
               "src/styles.css"
             ],
             "scripts": []
@@ -119,6 +121,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "AbcLogicsticsApp"
+    }
+  },
+  "defaultProject": "AbcLogicsticsApp",
+  "cli": {
+    "analytics": "e5774782-09d9-408b-b0fe-446d5797edfe"
+  }
 }

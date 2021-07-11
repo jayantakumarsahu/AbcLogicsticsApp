@@ -1,0 +1,111 @@
+<div class="card">
+  <div class="card-header">
+    {{pageTitle}}
+  </div>
+
+  <div class="card-body">
+    <form novalidate
+          (ngSubmit)="saveProduct()"
+          [formGroup]="shippingForm">
+
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="SenderNameId">Sender Name</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="SenderNameId"
+                 type="text"
+                 placeholder="Name (required)"
+                 formControlName="SenderName"
+                  />
+         
+        </div>
+      </div>
+
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="DescriptionId">Description</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="DescriptionId"
+                 type="text"
+                 placeholder="Description (required)"
+                 formControlName="Description"
+                 />
+          
+        </div>
+      </div>
+
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="ReceiptAddressId">Receipt Address</label>
+
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="ReceiptAddressId"
+                 type="text"
+                 placeholder="Address"
+                 formControlName="ReceiptAddress"
+                 />
+          
+        </div>
+      </div>
+
+
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="ExpeditedId">Expedited</label>
+
+        <div class="col-md-8">
+          
+                <select formControlName="Expedition" class="form-control" id="ExpeditedId">
+                  <option disabled>Select Expedition</option>
+                  <option value="0">Choose Expedition</option>
+                  <option value="1">True</option>
+                  <option value="2">False</option>
+                </select>
+          
+        </div>
+      </div>
+
+      
+
+     <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="ShipmentTypeId">ShipmentType</label>
+
+        <div class="col-md-8">
+          
+          <select formControlName="ShipmentType" class="form-control" id="ShipmentTypeId">
+            <option disabled>Select Shipment</option>
+            <option value="0">Choose Shipment Type</option>
+            <option value="1">LTL</option>
+            <option value="2">Truck Load</option>
+
+          </select>
+        </div>
+      </div>
+
+      
+      
+      
+
+      <div class="form-group row mb-2">
+        <div class="offset-md-2 col-md-4">
+          <button class="btn btn-primary mr-3"
+                  style="width:80px;"
+                  type="submit"
+                  >
+            Save
+          </button>
+         
+         
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="alert alert-danger"
+       *ngIf="errorMessage">{{errorMessage}}
+  </div>
+</div>

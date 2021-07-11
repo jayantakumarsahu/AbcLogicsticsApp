@@ -1,0 +1,54 @@
+<div class="card">
+  <div class="card-header">
+    {{pageTitle}}
+  </div>
+
+  <div class="card-body">
+    
+    <div>
+      <a [routerLink]="['/createshipping']">
+      </a>
+    </div>
+
+    <div class="table-responsive">
+      <table class="table mb-0"
+             *ngIf="shippings && shippings.length">
+        <thead>
+          <tr>
+           
+            <th>Sender Name</th>
+            <th>Description</th>
+            <th>Address</th>
+            <th>Expedition</th>
+            <th>ShipmentType</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let shipping of shippings">
+           
+            <td>
+              <a [routerLink]="['/createshipping']">
+                {{ shipping.senderName }}
+              </a>
+            </td>
+            <td>{{ shipping.description }}</td>
+            <td>{{ shipping.receiptAddress }}</td>
+            <td>{{ shipping.expedited }}</td>
+        <td>{{ shipping.shipmentType }}</td>
+            <td>
+              
+            
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>
+
+<div *ngIf="errorMessage"
+     class="alert alert-danger">
+  Error: {{ errorMessage }}
+</div>
