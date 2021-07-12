@@ -29,7 +29,7 @@ export class ShippingListComponent implements OnInit {
       // Don't delete, it was never saved.
       this.onSaveComplete();
     } else {
-      this.shippingService.deleteProduct(id)
+      this.shippingService.deleteShipping(id)
           .subscribe({
             next: () => this.onSaveComplete(),
             error: err => this.errorMessage = err
@@ -38,7 +38,7 @@ export class ShippingListComponent implements OnInit {
   }
   onSaveComplete(): void {
     // Reset the form to clear the flags
-    this.router.navigate(['/products']);
+    this.router.navigate(['/welcome']);
   }
 
 }

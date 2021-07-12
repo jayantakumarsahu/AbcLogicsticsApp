@@ -28,9 +28,11 @@ export class ServiceService {
     var url=this.productsUrl + "ShippingDetails"
     return this.http.get<ShippingDetails[]>(url);
   }
-  deleteProduct(id: number): Observable<{}> {
+  deleteShipping(id: number): Observable<{}> {
+    console.log(id);
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-    const url = `${this.productsUrl}/${id}`;
+    var urll=this.productsUrl + "ShippingDetails"
+    const url = `${urll}/${id}`;
     return this.http.delete<ShippingDetails>(url, { headers });
   }
   private initializeShipping(): ShippingDetails {
